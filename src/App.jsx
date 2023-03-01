@@ -1,8 +1,15 @@
 import React from 'react';
+import TabBar from './components/TabBar';
+import MyRouter from './router/MyRouter';
 
 const App = () => {
   return (
-    <div>Hello World!</div>
+    <div className="app">
+      <div className="container">
+        <MyRouter />
+      </div>
+      <TabBar />
+    </div>
   );
 }
 
