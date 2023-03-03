@@ -8,6 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import './Selector.scss';
+import SearchBox from './SearchBox.jsx';
 
 const Selector = ({ typeId, setTypeId, optionId, setOptionId, methodId, setMethodId }) => {
   const [typeList, setTypeList] = useState([]);
@@ -54,7 +55,9 @@ const Selector = ({ typeId, setTypeId, optionId, setOptionId, methodId, setMetho
       <Paper
         className="type-selector"
         elevation={2}
-        square={true}>
+        square={true}
+      >
+        <SearchBox />
         <Tabs
           value={typeId}
           onChange={handleSelectType}

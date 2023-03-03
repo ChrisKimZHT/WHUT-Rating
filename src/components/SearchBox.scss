@@ -1,0 +1,20 @@
+.search-box {
+  display: flex;
+  height: 36px;
+  line-height: 36px;
+  padding: 4px;
+
+  .position-btn {
+    height: 36px;
+    line-height: 36px;
+  }
+
+  .search-btn {
+    flex-grow: 1;
+    height: 36px;
+    line-height: 36px;
+    border: 1px solid #E0E3E7;
+    border-radius: 16px;
+    background-color: #F3F6F9;
+  }
+}
