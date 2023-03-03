@@ -9,7 +9,18 @@ import MyLink from './MyLink';
 
 const TabBar = () => {
   const currentPath = useLocation().pathname;
-  const [value, setValue] = useState(1);
+  const path2value = (path) => {
+    if (path.startsWith("/list")) {
+      return 0;
+    } else if (path.startsWith("/rate")) {
+      return 1;
+    } else if (path.startsWith("/user")) {
+      return 2;
+    } else {
+      return 0;
+    }
+  }
+  const [value, setValue] = useState(path2value(currentPath));
 
   return (
     <Paper elevation={4} className="tabbar">
