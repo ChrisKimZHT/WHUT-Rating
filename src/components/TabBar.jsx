@@ -1,24 +1,30 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Paper, BottomNavigation, BottomNavigationAction } from '@mui/material';
+import HomeIcon from '@mui/icons-material/Home';
+import StarIcon from '@mui/icons-material/Star';
+import PersonIcon from '@mui/icons-material/Person';
 import './TabBar.scss';
+import MyLink from './MyLink';
 
 const TabBar = () => {
   const currentPath = useLocation().pathname;
+  const [value, setValue] = useState(1);
 
   return (
-    <div className="tabbar">
-      <ul className="nav nav-tabs nav-fill">
-        <li className="nav-item">
-          <Link className={`nav-link ${currentPath.startsWith("/list") ? "active" : ""}`} to="/list">首页</Link>
-        </li>
-        <li className="nav-item">
-          <Link className={`nav-link ${currentPath.startsWith("/rate") ? "active" : ""}`} to="/rate">打分</Link>
-        </li>
-        <li className="nav-item">
-          <Link className={`nav-link ${currentPath.startsWith("/user") ? "active" : ""}`} to="/user">我的</Link>
-        </li>
-      </ul>
-    </div>
+    <Paper elevation={4} className="tabbar">
+      <BottomNavigation
+        showLabels={false}
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+      >
+        <BottomNavigationAction label="首页" icon={<HomeIcon />} href="/list" LinkComponent={MyLink} />
+        <BottomNavigationAction label="打分" icon={<StarIcon />} href="/rate" LinkComponent={MyLink} />
+        <BottomNavigationAction label="我的" icon={<PersonIcon />} href="/user" LinkComponent={MyLink} />
+      </BottomNavigation >
+    </Paper>
   );
 }
 
