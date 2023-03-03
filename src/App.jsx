@@ -5,9 +5,7 @@ import MyRouter from './router/MyRouter';
 const App = () => {
   return (
     <div className="app">
-      <div className="container">
-        <MyRouter />
-      </div>
+      <MyRouter />
       <TabBar />
     </div>
   );
