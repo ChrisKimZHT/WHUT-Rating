@@ -1,13 +1,14 @@
 import React from 'react';
 import TabBar from './components/TabBar';
 import MyRouter from './router/MyRouter';
+import './App.scss';
 
 const App = () => {
   return (
-    <div className="app">
+    <React.Fragment>
       <MyRouter />
       <TabBar />
-    </div>
+    </React.Fragment>
   );
 }
 

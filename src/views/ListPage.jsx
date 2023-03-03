@@ -1,29 +1,26 @@
 import React, { useState } from 'react';
 import ShopList from '../components/ShopList';
-import TypeSelector from '../components/TypeSelector';
-import './ListPage.scss';
+import Selector from '../components/Selector';
 
 const ListPage = () => {
-  const [typeId, setTypeId] = useState(0);
-  const [optionId, setOptionId] = useState(0);
+  const [typeId, setTypeId] = useState("");
+  const [optionId, setOptionId] = useState("");
+  const [methodId, setMethodId] = useState("");
 
   return (
-    <div className="list-page">
-      <div className="input-group">
-        <input type="text" className="form-control search-input" placeholder="请输入关键字" />
-        <div className="input-group-append">
-          <button className="btn btn-primary search-btn" type="button">搜索</button>
-        </div>
-      </div>
-      <TypeSelector
+    <div>
+      <Selector
         typeId={typeId}
-        optionId={optionId}
         setTypeId={setTypeId}
+        optionId={optionId}
         setOptionId={setOptionId}
+        methodId={methodId}
+        setMethodId={setMethodId}
       />
       <ShopList
         typeId={typeId}
         optionId={optionId}
+        methodId={methodId}
       />
     </div>
   );
