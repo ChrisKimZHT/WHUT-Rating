@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
@@ -8,6 +9,8 @@ import Rating from '@mui/material/Rating';
 import "./ShopList.scss";
 
 const ShopList = ({ shopData }) => {
+  const navigate = useNavigate();
+
   const fomatTags = (tags) => {
     let tagString = "";
     tags.forEach((tag, index) => {
@@ -28,7 +31,8 @@ const ShopList = ({ shopData }) => {
             <ListItemButton
               key={index}
               sx={{ padding: "8px 8px" }}
-            // onClick={}
+              divider={true}
+              onClick={() => navigate("/shop/" + shop.shopId)}
             >
               <ListItemAvatar>
                 <Avatar
@@ -52,7 +56,7 @@ const ShopList = ({ shopData }) => {
           );
         })}
       </List>
-    </div>
+    </div >
   );
 }
 
