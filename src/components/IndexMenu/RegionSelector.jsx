@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
-import SearchIcon from '@mui/icons-material/Search';
 import PinDropIcon from '@mui/icons-material/PinDrop';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -11,13 +10,14 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
-import { service } from '../service/Service';
-import './SearchBox.scss';
+import { service } from '../../service/Service';
+import "./RegionSelector.scss";
 
-const SearchBox = ({ regionId, setRegionId }) => {
+const RegionSelector = ({ regionId, setRegionId }) => {
   const [regionList, setRegionList] = useState([]);
   const [regionOpenStat, setRegionOpenStat] = useState(false);
   const [selectRegion, setSelectRegion] = useState(regionId);
+  useEffect(() => { refreshRegionData() }, []);
 
   const refreshRegionData = async () => {
     await service.list.regions()
@@ -49,17 +49,15 @@ const SearchBox = ({ regionId, setRegionId }) => {
     setRegionOpenStat(false);
   }
 
-  useEffect(() => { refreshRegionData() }, []);
-
   return (
-    <div className="search-box">
+    <div className="region-selector">
       <Button
         className="position-btn"
         onClick={handleRegionOpen}
       >
         <PinDropIcon />
         <div className="region-name">
-          {regionList.filter(region => region.regionId === regionId)[0].name}
+          {regionList.filter(region => region.regionId === regionId)[0]?.name}
         </div>
       </Button >
       <Dialog
@@ -94,15 +92,8 @@ const SearchBox = ({ regionId, setRegionId }) => {
           <Button onClick={handleConfirmRegion}>确定</Button>
         </DialogActions>
       </Dialog>
-      <Button
-        className="search-btn"
-        variant="outlined"
-        startIcon={<SearchIcon />}
-      >
-        搜索
-      </Button>
     </div>
   );
 }
 
-export default SearchBox;
+export default RegionSelector;

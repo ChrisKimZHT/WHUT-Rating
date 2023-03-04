@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ShopList = ({ typeId, optionId, methodId }) => {
+const ShopList = ({ regionId, typeId, optionId, methodId }) => {
   return (
     <div>
-      {typeId + " - " + optionId + " - " + methodId}
+      {regionId + " - " + typeId + " - " + optionId + " - " + methodId}
     </div>
   );
 }

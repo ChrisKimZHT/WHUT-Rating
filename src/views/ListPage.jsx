@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import ShopList from '../components/ShopList';
-import Selector from '../components/Selector';
+import IndexMenu from '../components/IndexMenu/IndexMenu';
 
 const ListPage = () => {
+  const [regionId, setRegionId] = useState("");
   const [typeId, setTypeId] = useState("");
   const [optionId, setOptionId] = useState("");
   const [methodId, setMethodId] = useState("");
-  const [regionId, setRegionId] = useState("");
 
   return (
     <div>
-      <Selector
+      <IndexMenu
         regionId={regionId}
         setRegionId={setRegionId}
         typeId={typeId}
@@ -21,6 +21,7 @@ const ListPage = () => {
         setMethodId={setMethodId}
       />
       <ShopList
+        regionId={regionId}
         typeId={typeId}
         optionId={optionId}
         methodId={methodId}

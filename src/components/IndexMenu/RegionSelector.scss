@@ -1,0 +1,15 @@
+.region-selector {
+  .position-btn {
+    height: 36px;
+    margin-right: 4px;
+    line-height: 36px;
+    border-radius: 32px;
+  }
+
+  .region-name {
+    max-width: 5em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
