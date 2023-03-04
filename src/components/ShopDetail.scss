@@ -1,3 +1,31 @@
 .shop-detail {
+  padding: 0 5%;
+
+  &.loading {
+    display: flex;
+    justify-content: center;
+  }
+
+  .divider {
+    margin: 10px 0;
+  }
+
+  .tags {
+    .tag {
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    .tag:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .ratings {
+    .rating {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
 
 }

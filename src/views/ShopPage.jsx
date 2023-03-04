@@ -8,6 +8,7 @@ const ShopPage = () => {
   return (
     <React.Fragment>
       <DetailMenu />
+      <div style={{ height: "55px" }}></div>
       <ShopDetail
         shopId={shopId}
       />
