@@ -27,4 +27,14 @@ export const service = {
       }
     }),
   },
+  shop: {
+    detail: (shopId) => axios({
+      baseURL,
+      method: "GET",
+      url: "/shop/detail",
+      params: {
+        shopId,
+      }
+    }),
+  }
 }

@@ -1,10 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router';
+import ShopDetail from '../components/ShopDetail';
 
 const ShopPage = () => {
-  const param = useParams().shopId;
+  const shopId = useParams().shopId;
   return (
-    param
+    <ShopDetail
+      shopId={shopId}
+    />
   );
 }
 

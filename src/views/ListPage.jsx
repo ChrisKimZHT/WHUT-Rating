@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ShopList from '../components/ShopList';
-import IndexMenu from '../components/IndexMenu/IndexMenu';
+import IndexMenu from '../components/IndexMenu';
 import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { service } from '../service/Service';
-import { display } from '@mui/system';
 
 const ListPage = () => {
   const [regionId, setRegionId] = useState("");

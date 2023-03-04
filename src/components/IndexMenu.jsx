@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Paper from '@mui/material/Paper';
 import SearchBox from './SearchBox.jsx';
 import TypeSelector from './TypeSelector.jsx';
-import { service } from '../../service/Service.js';
+import { service } from '../service/Service.js';
 import OptionSelector from './OptionSelector.jsx';
 import MethodSelector from './MethodSelector.jsx';
 import './IndexMenu.scss';
@@ -46,7 +46,7 @@ const IndexMenu = ({ regionId, setRegionId, typeId, setTypeId, optionId, setOpti
   return (
     <div className="index-menu">
       <Paper
-        className="papar-area"
+        className="paper-area"
         elevation={2}
         square={true}
       >
