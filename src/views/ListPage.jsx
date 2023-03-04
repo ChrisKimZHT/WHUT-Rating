@@ -6,10 +6,13 @@ const ListPage = () => {
   const [typeId, setTypeId] = useState("");
   const [optionId, setOptionId] = useState("");
   const [methodId, setMethodId] = useState("");
+  const [regionId, setRegionId] = useState("");
 
   return (
     <div>
       <Selector
+        regionId={regionId}
+        setRegionId={setRegionId}
         typeId={typeId}
         setTypeId={setTypeId}
         optionId={optionId}

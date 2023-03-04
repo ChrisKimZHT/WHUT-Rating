@@ -8,6 +8,11 @@ export const service = {
       baseURL,
       method: "GET",
       url: "/list/types",
-    })
+    }),
+    regions: () => axios({
+      baseURL,
+      method: "GET",
+      url: "/list/regions",
+    }),
   },
 }

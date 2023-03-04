@@ -10,7 +10,7 @@ import Select from '@mui/material/Select';
 import './Selector.scss';
 import SearchBox from './SearchBox.jsx';
 
-const Selector = ({ typeId, setTypeId, optionId, setOptionId, methodId, setMethodId }) => {
+const Selector = ({ regionId, setRegionId, typeId, setTypeId, optionId, setOptionId, methodId, setMethodId }) => {
   const [typeList, setTypeList] = useState([]);
   const [optionList, setOptionList] = useState([]);
   const [methodList, setMethodList] = useState([]);
@@ -57,7 +57,10 @@ const Selector = ({ typeId, setTypeId, optionId, setOptionId, methodId, setMetho
         elevation={2}
         square={true}
       >
-        <SearchBox />
+        <SearchBox
+          regionId={regionId}
+          setRegionId={setRegionId}
+        />
         <Tabs
           value={typeId}
           onChange={handleSelectType}

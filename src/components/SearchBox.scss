@@ -6,7 +6,9 @@
 
   .position-btn {
     height: 36px;
+    margin-right: 4px;
     line-height: 36px;
+    border-radius: 32px;
   }
 
   .search-btn {
@@ -16,5 +18,12 @@
     border: 1px solid #E0E3E7;
     border-radius: 16px;
     background-color: #F3F6F9;
+  }
+
+  .region-name {
+    max-width: 5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
