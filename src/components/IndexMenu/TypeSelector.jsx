@@ -2,11 +2,15 @@ import React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
-const TypeSelector = ({ typeId, setTypeId, typeList }) => {
+const TypeSelector = ({ typeList, typeId, setTypeId, setOptionId, setMethodId }) => {
   return (
     <Tabs
       value={typeId}
-      onChange={(_, typeId) => { setTypeId(typeId); }}
+      onChange={(_, typeId) => {
+        setTypeId(typeId);
+        setOptionId("");
+        setMethodId("");
+      }}
       variant="scrollable"
       scrollButtons="auto"
     >

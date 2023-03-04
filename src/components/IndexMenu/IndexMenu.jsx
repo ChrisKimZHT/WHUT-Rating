@@ -62,9 +62,11 @@ const IndexMenu = ({ regionId, setRegionId, typeId, setTypeId, optionId, setOpti
         </div>
         <TypeSelector
           className="type-selector"
+          typeList={typeList}
           typeId={typeId}
           setTypeId={setTypeId}
-          typeList={typeList}
+          setOptionId={setOptionId}
+          setMethodId={setMethodId}
         />
       </Paper>
       <div style={{ height: "100px" }}></div>
