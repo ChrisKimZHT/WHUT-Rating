@@ -17,19 +17,21 @@ const RegionSelector = ({ regionId, setRegionId }) => {
   const [regionList, setRegionList] = useState([]);
   const [regionOpenStat, setRegionOpenStat] = useState(false);
   const [selectRegion, setSelectRegion] = useState(regionId);
-  useEffect(() => { refreshRegionData() }, []);
 
-  const refreshRegionData = async () => {
-    await service.list.regions()
-      .then(res => {
-        const regions = res.data.regions;
-        setRegionList(regions);
-        setRegionId(regions[0].regionId);
-      })
-      .catch(err => {
-        console.log("/list/regions: " + err);
-      });
-  }
+  useEffect(() => {
+    const refreshRegionData = async () => {
+      await service.list.regions()
+        .then(res => {
+          const regions = res.data.regions;
+          setRegionList(regions);
+          setRegionId(regions[0].regionId);
+        })
+        .catch(err => {
+          console.log("/list/regions: " + err);
+        });
+    }
+    refreshRegionData();
+  }, [setRegionId]);
 
   const handleRegionOpen = () => {
     setRegionOpenStat(true);
