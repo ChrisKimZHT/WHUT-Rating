@@ -14,5 +14,17 @@ export const service = {
       method: "GET",
       url: "/list/regions",
     }),
+    board: (regionId, typeId, optionId, methodId, page = 0) => axios({
+      baseURL,
+      method: "GET",
+      url: "/list/board",
+      params: {
+        regionId,
+        typeId,
+        optionId,
+        methodId,
+        page,
+      }
+    }),
   },
 }

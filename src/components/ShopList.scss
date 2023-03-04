@@ -1,0 +1,11 @@
+.shop-list {
+  .list-item-text {
+
+    .MuiListItemText-secondary,
+    .MuiListItemText-primary {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
