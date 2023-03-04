@@ -67,6 +67,7 @@ const IndexMenu = ({ regionId, setRegionId, typeId, setTypeId, optionId, setOpti
           typeList={typeList}
         />
       </Paper>
+      <div style={{ height: "100px" }}></div>
       <div className="opt-met-selector">
         <OptionSelector
           optionList={optionList}

@@ -1,5 +1,10 @@
 .index-menu {
   .papar-area {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     margin-bottom: 5px;
   }
 

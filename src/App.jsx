@@ -7,6 +7,7 @@ const App = () => {
   return (
     <React.Fragment>
       <MyRouter />
+      <div style={{ height: "50px" }}></div>
       <TabBar />
     </React.Fragment>
   );
