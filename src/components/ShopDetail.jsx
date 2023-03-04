@@ -92,6 +92,7 @@ const ShopDetail = ({ shopId }) => {
           <img
             src={shopData.image}
             loading="lazy"
+            alt="shop"
           />
         </ImageListItem>
       </ImageList>
