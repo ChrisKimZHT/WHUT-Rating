@@ -69,5 +69,12 @@ export const service = {
         shopId,
       }
     }),
+  },
+  me: {
+    profile: () => axios({
+      baseURL,
+      method: "GET",
+      url: "/me/profile",
+    }),
   }
 }

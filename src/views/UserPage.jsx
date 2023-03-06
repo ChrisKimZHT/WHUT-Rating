@@ -1,8 +1,13 @@
 import React from 'react';
+import UserBrief from '../components/UserBrief';
 
 const UserPage = () => {
   return (
-    "UserPage"
+    <React.Fragment>
+      <div style={{ margin: "10px" }}>
+        <UserBrief />
+      </div>
+    </React.Fragment>
   );
 }
 
