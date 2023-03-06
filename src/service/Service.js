@@ -26,6 +26,15 @@ export const service = {
         page,
       }
     }),
+    search: (keyword, page) => axios({
+      baseURL,
+      method: "GET",
+      url: "/list/search",
+      params: {
+        keyword,
+        page,
+      }
+    }),
   },
   shop: {
     detail: (shopId) => axios({
