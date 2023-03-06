@@ -100,6 +100,7 @@ const SearchBox = () => {
         <div style={{ flexShrink: 0, height: "50px" }}></div>
         <ShopList
           shopData={result}
+          handleClick={handleClose}
         />
         {result.length !== 0 ? (
           <Button

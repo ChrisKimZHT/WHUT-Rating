@@ -8,7 +8,7 @@ import Avatar from '@mui/material/Avatar';
 import Rating from '@mui/material/Rating';
 import "./ShopList.scss";
 
-const ShopList = ({ shopData }) => {
+const ShopList = ({ shopData, handleClick }) => {
   const navigate = useNavigate();
 
   const fomatTags = (tags) => {
@@ -32,7 +32,12 @@ const ShopList = ({ shopData }) => {
               key={index}
               sx={{ padding: "8px 8px" }}
               divider={true}
-              onClick={() => navigate("/shop/" + shop.shopId)}
+              onClick={() => {
+                navigate("/shop/" + shop.shopId);
+                if (handleClick) {
+                  handleClick();
+                }
+              }}
             >
               <ListItemAvatar>
                 <Avatar
