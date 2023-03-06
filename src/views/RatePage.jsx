@@ -1,8 +1,11 @@
 import React from 'react';
+import RateMenu from '../components/RateMenu';
 
 const RatePage = () => {
   return (
-    "RatePage"
+    <React.Fragment>
+      <RateMenu />
+    </React.Fragment>
   );
 }
 

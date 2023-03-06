@@ -4,6 +4,8 @@ import ListPage from '../views/ListPage';
 import RatePage from '../views/RatePage';
 import ShopPage from '../views/ShopPage';
 import UserPage from '../views/UserPage';
+import FeedbackPage from '../views/FeedbackPage';
+import MakeRatePage from '../views/MakeRatePage';
 
 const MyRouter = () => {
   return (
@@ -13,6 +15,8 @@ const MyRouter = () => {
       <Route path="/rate" element={<RatePage />} />
       <Route path="/user" element={<UserPage />} />
       <Route path="/shop/:shopId" element={<ShopPage />} />
+      <Route path="/rate/:shopId" element={<MakeRatePage />} />
+      <Route path="/feedback/:shopId" element={<FeedbackPage />} />
       <Route path="*" element={<Navigate to={"list"} />} />
     </Routes>
   );

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { service } from '../service/Service.js';
+import { useNavigate } from 'react-router';
 import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
@@ -7,10 +8,12 @@ import Chip from '@mui/material/Chip';
 import Rating from '@mui/material/Rating';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import Button from '@mui/material/Button';
 import "./ShopDetail.scss";
 
 const ShopDetail = ({ shopId }) => {
   const [shopData, setShopData] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     const refreshShopData = async () => {
@@ -46,6 +49,26 @@ const ShopDetail = ({ shopId }) => {
           {"营业时间：" + shopData.time}
         </Typography>
       </div>
+      <Button
+        variant="contained"
+        size="small"
+        style={{ marginRight: "10px" }}
+        onClick={() => {
+          navigate(`/rate/${shopId}`);
+        }}
+      >
+        我要打分
+      </Button>
+      <Button
+        variant="contained"
+        size="small"
+        color="error"
+        onClick={() => {
+          navigate(`/feedback/${shopId}`);
+        }}
+      >
+        我要反馈
+      </Button>
       <Divider className="divider" />
       <div className="info">
         <Typography
