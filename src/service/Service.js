@@ -45,5 +45,29 @@ export const service = {
         shopId,
       }
     }),
+    markStat: (shopId) => axios({
+      baseURL,
+      method: "GET",
+      url: "/shop/markStat",
+      params: {
+        shopId,
+      }
+    }),
+    mark: (shopId) => axios({
+      baseURL,
+      method: "POST",
+      url: "/shop/mark",
+      data: {
+        shopId,
+      }
+    }),
+    unmark: (shopId) => axios({
+      baseURL,
+      method: "POST",
+      url: "/shop/unmark",
+      data: {
+        shopId,
+      }
+    }),
   }
 }

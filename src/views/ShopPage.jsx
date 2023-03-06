@@ -7,7 +7,9 @@ const ShopPage = () => {
   const shopId = useParams().shopId;
   return (
     <React.Fragment>
-      <DetailMenu />
+      <DetailMenu
+        shopId={shopId}
+      />
       <div style={{ height: "55px" }}></div>
       <ShopDetail
         shopId={shopId}

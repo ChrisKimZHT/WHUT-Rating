@@ -1,11 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
 import SearchBox from './SearchBox.jsx';
 import "./DetailMenu.scss";
+import { service } from '../service/Service.js';
 
-const DetailMenu = () => {
+const DetailMenu = ({ shopId }) => {
+  const [markStat, setMarkStat] = useState(false);
+
+  useEffect(() => {
+    service.shop.markStat(shopId)
+      .then(res => {
+        setMarkStat(res.data.markStat);
+      })
+      .catch(err => {
+        console.log("/shop/markStat: " + err);
+      });
+  }, []);
+
+  const handleMark = () => {
+    if (markStat) {
+      service.shop.unmark(shopId)
+        .then(res => {
+          setMarkStat(false);
+        })
+        .catch(err => {
+          console.log("/shop/unmark: " + err);
+        });
+    } else {
+      service.shop.mark(shopId)
+        .then(res => {
+          setMarkStat(true);
+        })
+        .catch(err => {
+          console.log("/shop/mark: " + err);
+        });
+    }
+  }
+
   return (
     <Paper
       className="detail-menu"
@@ -19,7 +54,13 @@ const DetailMenu = () => {
         <ArrowBackIosNewIcon />
       </IconButton >
       <SearchBox />
-    </Paper>
+      <IconButton
+        className="star-button"
+        onClick={handleMark}
+      >
+        {markStat ? <StarIcon /> : <StarBorderIcon />}
+      </IconButton >
+    </Paper >
   );
 }
 
