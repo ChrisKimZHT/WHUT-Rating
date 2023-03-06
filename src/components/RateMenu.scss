@@ -1,0 +1,19 @@
+.rate-menu {
+  display: flex;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  line-height: 36px;
+  padding: 6px 4px;
+
+  .search-box {
+    margin-left: 5px;
+    padding: 12px;
+    border: 1px solid #E0E3E7;
+    border-radius: 16px;
+    background-color: #F3F6F9;
+  }
+}
