@@ -22,7 +22,7 @@ const UserBrief = () => {
   }, [])
 
   return (
-    <Paper elevation={4} className="user-brief">
+    <div className="user-brief">
       <ListItemButton
         sx={{ padding: "8px 8px" }}
         onClick={1}
@@ -43,7 +43,7 @@ const UserBrief = () => {
           </Typography>
         </Stack>
       </ListItemButton>
-    </Paper>
+    </div>
   );
 }
 
