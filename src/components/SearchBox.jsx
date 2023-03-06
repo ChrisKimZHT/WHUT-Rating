@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 import Dialog from '@mui/material/Dialog';
@@ -16,6 +17,7 @@ const SearchBox = () => {
   const [search, setSearch] = useState("");
   const [result, setResult] = useState([]);
   const [page, setPage] = useState(0);
+  const navigate = useNavigate();
 
   const querySearch = (_keyword, clear) => {
     service.list.search(_keyword, page)
@@ -100,7 +102,10 @@ const SearchBox = () => {
         <div style={{ flexShrink: 0, height: "50px" }}></div>
         <ShopList
           shopData={result}
-          handleClick={handleClose}
+          handleClick={(shopId) => {
+            handleClose();
+            navigate("/shop/" + shopId);
+          }}
         />
         {result.length !== 0 ? (
           <Button

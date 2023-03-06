@@ -33,9 +33,11 @@ const ShopList = ({ shopData, handleClick }) => {
               sx={{ padding: "8px 8px" }}
               divider={true}
               onClick={() => {
-                navigate("/shop/" + shop.shopId);
+                // 若提供了 handleClick，则使用 handleClick
                 if (handleClick) {
-                  handleClick();
+                  handleClick(shop.shopId);
+                } else {
+                  navigate("/shop/" + shop.shopId);
                 }
               }}
             >
